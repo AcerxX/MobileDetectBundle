@@ -96,7 +96,7 @@ class RequestResponseListener
     /**
      * Handles the Request
      *
-     * @param GetResponseEvent $event
+     * @param RequestEvent $event
      *
      * @return null
      */
@@ -166,7 +166,7 @@ class RequestResponseListener
     /**
      * Handles the Response
      *
-     * @param FilterResponseEvent $event
+     * @param ResponseEvent $event
      *
      * @return null
      */
@@ -215,7 +215,7 @@ class RequestResponseListener
      */
     protected function prepareResponseModification($view)
     {
-        $this->modifyResponseClosure = function (DeviceView $deviceView, FilterResponseEvent $event) use ($view) {
+        $this->modifyResponseClosure = function (DeviceView $deviceView, ResponseEvent $event) use ($view) {
             return $deviceView->modifyResponse($view, $event->getResponse());
         };
     }
