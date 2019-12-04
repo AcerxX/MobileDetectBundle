@@ -57,7 +57,7 @@ class DeviceDataCollector extends DataCollector
     public function collect(
         Request $request,
         Response $response,
-        ?Throwable $exception = NULL
+        ?\Throwable $exception = NULL
     ) {
         $this->data['currentView'] = $this->deviceView->getViewType();
         $this->data['views'] = array(
